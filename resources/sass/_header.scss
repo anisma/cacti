@@ -1,0 +1,52 @@
+.site-header {
+    position: fixed;
+    background-color: transparent;
+    width: 100vw;
+    top: 0;
+    .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+    }
+    .logo {
+        width: 70px;
+        flex-basis: 87px;
+        a {
+            text-align: none;
+            display: inline-block;
+            padding-left: 0;
+        }
+    }
+    .header-middle-area {
+        flex: 2;
+    }
+    .header-right-area {
+        flex: 2;
+        display: flex;
+        justify-content: flex-end;
+        img {
+            height: 1em;
+        }
+    }
+    nav {
+        height: 100%;
+    }
+    ul {
+        li {
+            display: inline;
+            &:last-child {
+                a {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 10px 20px;
+        &:hover {
+            background-color: $color-primary;
+        }
+    }
+}
