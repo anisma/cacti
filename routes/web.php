@@ -14,16 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
-Route::get('/blog', function () {
-    return view('blog.index');
+Route::get('/404', function () {
+    return view('404');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/shop', 'ShopController@index')->name('shop');
 

@@ -80,8 +80,12 @@
         <div class="shop-wrapper">
             <h1 class="shop-title">Shop</h1>
             <div class="shortby">
-                <label for="short-by"></label>
-                <option name="short-by" value="">satu</option>
+                <div class="main-shortby">
+                    <label for="short-by"></label>
+                    <option name="short-by" value="">
+                        <span>Featured</span>
+                    </option>
+                </div>
             </div>
 
             <div class="card-list">

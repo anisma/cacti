@@ -1,17 +1,54 @@
 @extends('layouts/app')
 @section('content')
     <div class="hero-wrapper">
-        <div class="hero-content wrapper">
-            <h1 class="hero-title">Haworthia Batesiana</h1>
-            <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <button class="btn hero-btn">shop now</button>
-            <nav>
-                <span class="arrow left"></span>
-                <span class="arrow right"></span>
-                <span class="line"></span>
-                <span class="pagination">1/3</span>
-            </nav>
+        <div class="banner-wrapper">
+            <div class="banner banner1">
+                <div class="hero-content wrapper">
+                    <div class="content-wrapper">
+                        <h1 class="hero-title">Haworthia Batesiana</h1>
+                        <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <button class="btn hero-btn">shop now</button>
+                        <nav>
+                            <span class="arrow-left"></span>
+                            <span class="arrow-right"></span>
+                            <span class="line"></span>
+                            <span class="pagination">1/3</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="banner banner2">
+                <div class="hero-content wrapper">
+                    <div class="content-wrapper">
+                        <h1 class="hero-title">Haworthia African Pearl</h1>
+                        <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <button class="btn hero-btn">shop now</button>
+                        <nav>
+                            <span class="arrow-left"></span>
+                            <span class="arrow-right"></span>
+                            <span class="line"></span>
+                            <span class="pagination">2/3</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="banner banner3">
+                <div class="hero-content wrapper">
+                    <div class="content-wrapper">
+                        <h1 class="hero-title">Echeveria Pulidonis</h1>
+                        <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <button class="btn hero-btn">shop now</button>
+                        <nav>
+                            <span class="arrow-left"></span>
+                            <span class="arrow-right"></span>
+                            <span class="line"></span>
+                            <span class="pagination">3/3</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </div>
+        
     </div>
     
     <div class="featured wrapper">
@@ -96,28 +133,30 @@
             <button class="btn blog-btn">continue read</button>
         </div>
     </div>
-
-    <div class="contact-us wrapper">
-        <div class="contact-us-content">
-            <h1>Contact Us</h1>
-            <p>If you have any problems, feel free to fill out this form and we will reply your messages.</p>
-            <form class="contact-us-form" action="#">
-                <div class="input-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" placeholder="Name">
-                </div>
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" placeholder="Email">
-                </div>
-                <div class="input-group">
-                    <label for="message">Message</label>
-                <textarea name="message" id="" cols="30" rows="5" placeholder="Message"></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+    <div class="contact-us">
+        <div class="wrapper">
+            <div class="contact-us-content">
+                <h1>Contact Us</h1>
+                <p>If you have any problems, feel free to fill out this form and we will reply your messages.</p>
+                <form class="contact-us-form" action="#">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" placeholder="Name">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                    <textarea name="message" id="" cols="30" rows="5" placeholder="Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
         </div>
     </div>
+    
 
 
 @endsection

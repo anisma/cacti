@@ -15,7 +15,7 @@
         box-shadow: nonere;
     }
     h1 {
-        margin-bottom: 2rem;
+        font-size: $font-size-sub-title;
     }
     h2,
     h3 {
@@ -32,11 +32,7 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        // .option {
-        //     padding-left: 35px;
-        // }
         input {
-            // left: 35px;
             top: 0;
             left: 0;
             position: absolute;
@@ -78,4 +74,19 @@
             display: block;
         }
     }
+}
+
+.shop-wrapper {
+    .shop-title {
+        font-size: $font-size-title;
+        margin-bottom: 1.5rem;
+    }
+    .shortby {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+    }
+    // .main-shortby {
+    //     display: block;
+    // }
 }

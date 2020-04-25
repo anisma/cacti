@@ -5,21 +5,21 @@
     <nav class="main-nav-footer">
         <ul class="main-section">
             <li class="home">
-                <a href="#">
+                <a href="{{ route('home') }}">
                 <span>Home</span></a>
             </li>    
             <li class="shop">
-                <a href="#">
+                <a href="{{ route('shop') }}">
                 <span>Shop</span>
             </a>
             </li>    
             <li class="blog">
-                <a href="#">
+                <a href="{{ route('blog') }}">
                 <span>Blog</span>
             </a>
             </li>    
             <li class="contacts">
-                <a href="#">
+                <a href="{{ route('contacts') }}">
                 <span>Contacts</span>
             </a>
             </li>    

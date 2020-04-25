@@ -1,0 +1,28 @@
+.contact-us-page {
+    height: 100vh;
+    background-image: url(/img/contact-page.jpg);
+    background-size: 130vw;
+    background-position: 0 50%;
+    ._contact-us {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 100px 0;
+        .contact-us-content {
+            padding-right: 30px;
+            border-right: solid 1px #333;
+            h1 {
+                font-size: $font-size-title;
+                margin-bottom: 2rem;
+            }
+            p {
+                margin-bottom: 2rem;
+                &:last-child {
+                    font-weight: bold;
+                }
+            }
+        }
+        .contact-us-form {
+            padding-left: 30px;
+        }
+    }
+}

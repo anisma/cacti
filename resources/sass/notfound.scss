@@ -1,0 +1,36 @@
+.not-found-page {
+    background-image: url('/img/4041.jpg');
+    background-size: 100vw;
+    background-position: 20%;
+    height: 100vh;
+    color: darken(#fff, 20);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    box-sizing: border-box;
+    .oh-no {
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 50px;
+        p {
+            font-family: $font-secondary;
+        }
+        hr {
+            width: 400px;
+            border: solid 0.5px;
+            margin: 15px 0 20px;
+        }
+        .btn-404 {
+            background-color: transparent;
+            border: solid 1px;
+        }
+    }
+}

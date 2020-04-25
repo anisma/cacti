@@ -1,0 +1,50 @@
+.card-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 50px;
+    text-align: center;
+    .card {
+        display: block;
+        transition: 0.5s;
+        &:hover {
+            box-shadow: 0 0 10px 5px rgba(185, 185, 185, 0.5);
+        }
+    }
+    .image {
+        margin-bottom: 0.8em;
+        width: 100%;
+        position: relative;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .view-details {
+            position: absolute;
+            display: flex;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 100%;
+            width: 100%;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .btn-view-details {
+            width: 150px;
+            height: auto;
+            margin: auto;
+            padding: 10px;
+            border: solid 2px #fff;
+            background-color: transparent;
+        }
+    }
+    .title,
+    .price {
+        display: block;
+        margin-bottom: 0.8em;
+    }
+    .price {
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,170 @@
+.hero-wrapper {
+    overflow: hidden;
+    .banner-wrapper {
+        position: relative;
+        width: 300%;
+        margin: 0;
+        left: -200;
+        text-align: left;
+        animation: 15s slidy infinite;
+    }
+    .banner {
+        width: 33.3%;
+        float: left;
+        height: 100vh;
+    }
+}
+
+.banner1 {
+    background-image: url('/img/banner1.jpg');
+    background-size: 150vw;
+    background-position: 80% 60%;
+    .content-wrapper {
+        margin: 0 auto 0 0;
+        width: 40%;
+    }
+}
+
+.banner2 {
+    display: flex;
+    justify-content: flex-end;
+    background-image: url('/img/banner2.jpg');
+    background-size: 150vw;
+    background-position: 85% 50%;
+    .content-wrapper {
+        margin: 0 0 0 auto;
+        width: 40%;
+    }
+}
+
+.banner3 {
+    background-image: url('/img/banner3.jpg');
+    background-size: 150vw;
+    background-position: 10% 50%;
+    .content-wrapper {
+        margin: 0 auto 0 0;
+        width: 40%;
+    }
+}
+
+.hero-content {
+    padding-top: 20vh;
+    .hero-title {
+        font-size: $font-size-main-title;
+        margin-bottom: 2rem;
+        line-height: 1;
+    }
+    p {
+        margin-bottom: 2rem;
+    }
+    nav {
+        margin-top: 2rem;
+        display: block;
+    }
+    .arrow-right {
+        position: relative;
+        padding: 10px 10px;
+        cursor: pointer;
+        &::before {
+            content: "";
+            z-index: 1;
+            position: absolute;
+            background-color: $color-font;
+            top: 2px;
+            left: 50%;
+            width: 20px;
+            height: 1px;
+            transform-origin: 0 0;
+            transform: rotateZ(60deg);
+        }
+        &::after {
+            content: "";
+            z-index: 1;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            background-color: $color-font;
+            width: 20px;
+            height: 1px;
+            transform-origin: 0 100%;
+            transform: rotateZ(-60deg);
+        }
+        &:hover {
+            background-color: $color-primary;
+        }
+    }
+    .arrow-left {
+        position: relative;
+        padding: 10px 10px;
+        cursor: pointer;
+        &::before {
+            content: "";
+            z-index: 1;
+            position: absolute;
+            background-color: $color-font;
+            top: 20px;
+            right: 0;
+            width: 20px;
+            height: 1px;
+            transform-origin: 0 0;
+            transform: rotateZ(-60deg);
+        }
+        &::after {
+            content: "";
+            z-index: 1;
+            position: absolute;
+            bottom: 18px;
+            right: 0;
+            background-color: $color-font;
+            width: 20px;
+            height: 1px;
+            transform-origin: 0 100%;
+            transform: rotateZ(60deg);
+        }
+        &:hover {
+            background-color: $color-primary;
+        }
+    }
+    .line {
+        position: relative;
+        padding: 10px 120px;
+        &::before {
+            content: "";
+            z-index: 1;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            background-color: $color-font;
+            width: 200px;
+            height: 1px;
+        }
+    }
+    .pagination {
+        position: relative;
+        font-size: 1.2em;
+    }
+}
+
+@keyframes slidy {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    33% {
+        left: -100%;
+    }
+    55% {
+        left: -100%;
+    }
+    68% {
+        left: -200%;
+    }
+    88% {
+        left: -200%;
+    }
+    100% {
+        left: 0;
+    }
+}
