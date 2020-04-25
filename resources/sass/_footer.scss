@@ -1,0 +1,35 @@
+.footer-wrapper {
+    display: block;
+    background-color: $color-font;
+    text-align: center;
+    width: 100vw;
+    height: 30vh;
+    .logo {
+        display: block;
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #fff;
+        padding: 20px;
+    }
+}
+
+.main-nav-footer {
+    display: block;
+    margin: 0;
+    li {
+        display: inline-block;
+        a {
+            color: #fff;
+            padding: 20px 20px;
+        }
+    }
+}
+
+.socials {
+    display: inline-block;
+    img {
+        padding: 20px 10px;
+        height: 2em;
+        width: auto;
+    }
+}

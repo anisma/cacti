@@ -1,0 +1,34 @@
+._blog {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50px;
+    background-image: url('/img/blog.jpg');
+    background-size: 100vw;
+    background-position: 25% 35%;
+    h1 {
+        font-size: 4em;
+        padding: 0 0 50px;
+        margin: 0;
+    }
+}
+
+.blog-article-index {
+    padding: 100px 0 50px;
+    .article-card-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 50px;
+        .image,
+        h1,
+        p {
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 1.5em;
+            height: 1;
+        }
+    }
+}

@@ -15,9 +15,6 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-    <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/d1167be4df.js" crossorigin="anonymous"></script>
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -78,6 +75,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+        @include('layouts/footer')
     </div>
 </body>
 </html>

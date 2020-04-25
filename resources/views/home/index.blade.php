@@ -12,8 +12,8 @@
                 <span class="pagination">1/3</span>
             </nav>
         </div>
-        
     </div>
+    
     <div class="featured wrapper">
         <div class="featured-title">
             <h1>Featured Items</h1>
@@ -64,7 +64,6 @@
             <h1>Why Succulents?</h1>
             <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <div class="image">
             <img src="/img/about-us.jpg" class="image">
@@ -89,7 +88,7 @@
         </div>
     </div>
         
-    <div class="blog wrapper">
+    <div class="blog-section wrapper">
         <img src="img/cactus.jpg" alt="">
         <div class="blog-content">
             <h1>Choosing the right pot size of your succulentus</h1>
@@ -101,17 +100,24 @@
     <div class="contact-us wrapper">
         <div class="contact-us-content">
             <h1>Contact Us</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <form action="#">
-                <label for="name">Name</label>
-                <input type="text" name="name">
-                <label for="email">Email</label>
-                <input type="email" name="email">
-                <label for="message">Message</label>
-                <textarea name="message" id="" cols="30" rows="5"></textarea>
+            <p>If you have any problems, feel free to fill out this form and we will reply your messages.</p>
+            <form class="contact-us-form" action="#">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="Name">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <label for="message">Message</label>
+                <textarea name="message" id="" cols="30" rows="5" placeholder="Message"></textarea>
+                </div>
                 <button type="submit" class="btn">Send Message</button>
             </form>
         </div>
+    </div>
 
 
 @endsection
