@@ -22,7 +22,8 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/shop', 'ShopController@index')->name('shop');
+Route::get('/shop', 'ProductController@index')->name('shop');
+Route::get('/shop/{product}', 'ProductController@show')->name('shop.show');
 
 Route::get('/blog', 'BlogController@index')->name('blog');
 

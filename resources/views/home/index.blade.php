@@ -54,44 +54,26 @@
     <div class="featured wrapper">
         <div class="featured-title">
             <h1>Featured Items</h1>
-            <a href="#">
+            <a href="{{ route('shop') }}">
                 <span>All Plants</span>
             </a>
         </div>
-        <div class="card-list">
-            <div class="card" >
-                <div class="image">
-                    <img src="img/cactus.jpg" alt="" >
-                    <div class="view-details" id="view-details0">
-                        <span class="btn btn-view-details" >View Details</span>
+        <div class="card-list"> 
+            @foreach ($featuredItems as $item)
+                <div class="card" >
+                    <div class="image">
+                        <img src="/img/{{ $item->Images[0]->image }}" alt="" >
+                        <div class="view-details">
+                            <a href="{{ route('shop.show',['product'=>$item->id]) }}">
+                                <span class="btn btn-view-details" >View Details</span>
+                            </a>
+                        </div>
                     </div>
+                    <span class="title">{{ $item->name }}</span>
+                    <span class="price">Rp {{ $item->price }}</span>
                 </div>
-                <span class="title">Cactus</span>
-                <span class="price">Rp 50.000</span>
-            </div>
+            @endforeach
 
-            <div class="card" id="card">
-                <div class="image">
-                    <img src="img/cactus.jpg" alt="" >
-                    <div class="view-details" id="view-details1">
-                        <span class="btn btn-view-details" >View Details</span>
-                    </div>
-                </div>
-                
-                <span class="title">Cactus</span>
-                <span class="price">Rp 50.000</span>
-            </div>
-
-            <div class="card">
-                <div class="image">
-                    <img src="img/cactus.jpg" alt="" >
-                    <div class="view-details" id="view-details2">
-                        <span class="btn btn-view-details" >View Details</span>
-                    </div>
-                </div>ccs
-                <span class="title">Cactus</span>
-                <span class="price">Rp 50.000</span>
-            </div>
         </div>
     </div>
 
