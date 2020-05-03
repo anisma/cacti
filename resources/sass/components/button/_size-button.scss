@@ -1,0 +1,41 @@
+.size-button-wrapper {
+    display: inline-block;
+}
+
+.size-button {
+    display: inline-block;
+    background-color: transparent;
+    text-transform: uppercase;
+    color: lighten($font-color, 50);
+    padding: 5px;
+    width: auto;
+    height: auto;
+    border: 1px solid lighten($font-color, 50);
+    margin: 1px 11px 1px 1px;
+    cursor: pointer;
+    &:last-child {
+        margin-right: 0;
+    }
+    &:hover {
+        border: 1px solid $font-color;
+        color: $font-color;
+        padding: 6px;
+        margin: 0 10px 0 0;
+    }
+
+    &.selected {
+        border: 1px solid $font-color;
+        color: $font-color;
+    }
+
+    &.disabled {
+        border: none;
+        color: lighten($font-color, 70);
+        background-color: lighten($font-color, 80);
+        cursor: not-allowed;
+        &:hover {
+            padding: 5px;
+            margin: 1px 11px 1px 1px;
+        }
+    }
+}

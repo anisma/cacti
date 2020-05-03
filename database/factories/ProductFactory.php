@@ -17,7 +17,7 @@ $factory->define(Product::class, function (Faker $faker) {
 
     return [
         'name' => $faker->unique()->name,
-        'description' =>$faker->paragraph,
+        'description' =>$faker->paragraph(15,true),
         'price' => $faker->randomElement([
             '45000',
             '50000',
@@ -26,6 +26,7 @@ $factory->define(Product::class, function (Faker $faker) {
         ]),
         'quantity' => $faker->randomDigit,
         'discount' => '0',
+        'sold' => $faker->randomDigit,
         'genus_id' => $faker->randomElement($genus),
         'color_id' => $faker->randomElement($color),
         'size_id' => $faker->randomElement($size),

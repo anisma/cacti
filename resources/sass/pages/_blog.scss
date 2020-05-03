@@ -1,13 +1,14 @@
-._blog {
+/*-------------- Styling for Blog Page------------*/
+
+.blog {
     height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('/img/blog1.jpg');
+    background-image: url("/img/blog1.jpg");
     background-size: 100vw;
     background-position: 25% 55%;
     h1 {
-        font-size: $font-size-main-title;
         padding: 0 0 60px;
         margin: 0;
     }
@@ -21,13 +22,14 @@
         column-gap: 30px;
         row-gap: 50px;
         .image,
-        h1,
+        h4,
         p {
-            margin-bottom: 1rem;
-        }
-        h1 {
-            font-size: $font-size-article;
+            margin-bottom: 1em;
             height: 1;
+        }
+
+        img {
+            width: 100%;
         }
     }
 }

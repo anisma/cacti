@@ -1,0 +1,30 @@
+#login {
+    height: 100vh;
+    padding: 100px;
+    box-sizing: border-box;
+    .login-container {
+        width: 30%;
+        margin: auto;
+        background-color: lighten($primary-color, 50);
+        border: 1px solid lighten($font-color, 80);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 30px;
+    }
+    h2 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0 30px;
+    }
+    button {
+        display: block;
+        margin: 0 auto 50px;
+    }
+    p {
+        text-align: center;
+    }
+}

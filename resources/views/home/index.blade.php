@@ -1,144 +1,93 @@
 @extends('layouts/app')
 @section('content')
-    <div class="hero-wrapper">
+    <div id="hero">
         <div class="banner-wrapper">
-            <div class="banner banner1">
-                <div class="hero-content wrapper">
-                    <div class="content-wrapper">
-                        <h1 class="hero-title">Haworthia Batesiana</h1>
-                        <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <button class="btn hero-btn">shop now</button>
-                        <nav>
-                            <span class="arrow-left"></span>
-                            <span class="arrow-right"></span>
-                            <span class="line"></span>
-                            <span class="pagination">1/3</span>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="banner banner2">
-                <div class="hero-content wrapper">
-                    <div class="content-wrapper">
-                        <h1 class="hero-title">Haworthia African Pearl</h1>
-                        <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <button class="btn hero-btn">shop now</button>
-                        <nav>
-                            <span class="arrow-left"></span>
-                            <span class="arrow-right"></span>
-                            <span class="line"></span>
-                            <span class="pagination">2/3</span>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="banner banner3">
-                <div class="hero-content wrapper">
-                    <div class="content-wrapper">
-                        <h1 class="hero-title">Echeveria Pulidonis</h1>
-                        <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <button class="btn hero-btn">shop now</button>
-                        <nav>
-                            <span class="arrow-left"></span>
-                            <span class="arrow-right"></span>
-                            <span class="line"></span>
-                            <span class="pagination">3/3</span>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-    
-    <div class="featured wrapper">
-        <div class="featured-title">
-            <h1>Featured Items</h1>
-            <a href="{{ route('shop') }}">
-                <span>All Plants</span>
-            </a>
-        </div>
-        <div class="card-list"> 
-            @foreach ($featuredItems as $item)
-                <div class="card" >
-                    <div class="image">
-                        <img src="/img/{{ $item->Images[0]->image }}" alt="" >
-                        <div class="view-details">
-                            <a href="{{ route('shop.show',['product'=>$item->id]) }}">
-                                <span class="btn btn-view-details" >View Details</span>
-                            </a>
-                        </div>
-                    </div>
-                    <span class="title">{{ $item->name }}</span>
-                    <span class="price">Rp {{ $item->price }}</span>
-                </div>
-            @endforeach
 
+            <x-banner image="/img/banner1.jpg" title="Haworthia Batesiana" index="1" total="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</x-banner>
+            <x-banner image="/img/banner2.jpg" title="Haworthia African Pearl" index="2" total="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</x-banner>
+            <x-banner image="/img/banner3.jpg" title="Echeveria Pulidonis" index="3" total="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</x-banner>
         </div>
     </div>
 
-    <div class="about wrapper">
-        
-        <div class="about-content">
-            <h1>Why Succulents?</h1>
-            <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="image">
+    <main class="main-content wrapper">
+
+        <section id="featured">
+            <div class="header">
+                <h3>Fatured Items</h3>
+                <a class="button-link" href="{{ route('shop') }}">All Plants</a>
+            </div>
+            <x-card-list :products="$featuredItems"/>
+        </section>
+
+        <section id="about-us">
+            <div>
+                <h2>Why succulents?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
             <img src="/img/about-us.jpg" class="image">
-        </div>
-    </div>
+        </section>
 
-    <div class="services wrapper">
-        <div class="service-item">
-            <img class="logo" src="logo/shipping.svg" alt="">
-            <h1>Shipping</h1>
-            <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="service-item">
-            <img class="logo" src="logo/gurantee.svg" alt="">
-            <h1>Gurantee</h1>
-            <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="service-item">
-            <img class="logo" src="logo/wallet.png" alt="" height="100px" width="100px">
-            <h1>Payment</h1>
-            <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-    </div>
-        
-    <div class="blog-section wrapper">
-        <img src="img/cactus.jpg" alt="">
-        <div class="blog-content">
-            <h1>Choosing the right pot size of your succulentus</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <button class="btn blog-btn">continue read</button>
-        </div>
-    </div>
-    <div class="contact-us">
+        <section id="point-of-sale">
+            <ul>
+                <li><img class="logo" src="/logo/shipping.svg" alt=""></li>
+                <li><h3>Shipping</h3></li>
+                <li>
+                    <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </li>
+            </ul>
+            <ul>
+                <li><img class="logo" src="/logo/gurantee.svg" alt=""></li>
+                <li><h3>Gurantee</h3></li>
+                <li>
+                    <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </li>
+            </ul>
+            <ul>
+                <li><img class="logo" src="/logo/wallet.png" alt=""></li>
+                <li><h3>Payment</h3></li>
+                <li>
+                    <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="article">
+            <img src="/img/image9.jpg" alt="">
+            <ul>
+                <li>
+                    <h3>Choosing the right pot size of your succulentus</h3>
+                </li>
+                <li>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </li>
+                <li><a class="button" href="">continue read</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <section id="contact-us">
         <div class="wrapper">
             <div class="contact-us-content">
-                <h1>Contact Us</h1>
+                <h2>Contact Us</h2>
                 <p>If you have any problems, feel free to fill out this form and we will reply your messages.</p>
                 <form class="contact-us-form" action="#">
-                    <div class="input-group">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" placeholder="Name">
+                    <x-input type="text" name="name" value="" label="Name"/>
+                    <x-input type="email" name="email" value="" label="Email"/>
+                    <div class="form-group">
+                        <textarea class="form-input @error('message')invalid @enderror" name="message" value="{{ old('message') }} id="message" cols="30" rows="5" placeholder="Message"></textarea>
+                        <label for="message" class="form-label">Message</label>
+                        @error('message')
+                            <span class="error-message">
+                            <strong> {{$message}} </strong>
+                            </span>
+                        @enderror
+
                     </div>
-                    <div class="input-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" placeholder="Email">
-                    </div>
-                    <div class="input-group">
-                        <label for="message">Message</label>
-                    <textarea name="message" id="" cols="30" rows="5" placeholder="Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
+                    <button type="submit" class="button">Send Message</button>
                 </form>
             </div>
         </div>
-    </div>
-    
-
-
+    </section>
 @endsection

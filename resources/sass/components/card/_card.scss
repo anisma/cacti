@@ -1,17 +1,12 @@
-.card-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 30px;
-    row-gap: 50px;
-    text-align: center;
-    .card {
-        display: block;
-        transition: 0.5s;
-        &:hover {
-            box-shadow: 0 0 10px 5px rgba(185, 185, 185, 0.5);
-        }
+.card {
+    display: block;
+    padding-bottom: 1px;
+    transition: 0.5s;
+    &:hover {
+        box-shadow: 0 0 10px 5px rgba(185, 185, 185, 0.5);
     }
-    .image {
+
+    .image-container {
         margin-bottom: 0.8em;
         width: 100%;
         position: relative;
@@ -31,19 +26,12 @@
             opacity: 0;
             transition: opacity 0.5s;
         }
-        .btn-view-details {
-            width: 150px;
-            height: auto;
-            margin: auto;
-            padding: 10px;
-            border: solid 2px #fff;
-            background-color: transparent;
-        }
     }
     .title,
     .price {
         display: block;
-        margin-bottom: 0.8em;
+        margin-bottom: 1em;
+        text-align: center;
     }
     .price {
         font-weight: bold;

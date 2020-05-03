@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Size::class, function (Faker $faker) {
     return [
-        'size' => $faker->unique()->randomElement([
+        'name' => $faker->unique()->randomElement([
             '2 inch',
             '4 inch',
             '6 inch'

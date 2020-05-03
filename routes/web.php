@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/404', function () {
-    return view('404');
+Route::get('/test', function () {
+    $items = App\Product::take(3)->get();
+    // $items->withPath(url('/'));
+    // dd($items);
+    return view('test', compact('items'));
 });
 
 Auth::routes();

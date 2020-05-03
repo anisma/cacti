@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Color::class, function (Faker $faker) {
     return [
-        'color' => $faker->unique()->colorName
+        'name' => $faker->unique()->colorName
     ];
 });

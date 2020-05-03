@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.card');
+const cards = document.querySelectorAll(".card");
 
 Array.from(cards).map((card, index) => {
     let idx = index;
@@ -6,13 +6,12 @@ Array.from(cards).map((card, index) => {
     card.addEventListener("mouseout", mouseoutEventHandle.bind(null, card));
 });
 
-
 function mouseoverEventHandle(card, event) {
-    let span = card.getElementsByClassName('view-details')[0];
+    let span = card.getElementsByClassName("view-details")[0];
     span.style.opacity = "1";
-};
+}
 
 function mouseoutEventHandle(card, event) {
-    let span = card.getElementsByClassName('view-details')[0];
+    let span = card.getElementsByClassName("view-details")[0];
     span.style.opacity = "0";
-};
+}

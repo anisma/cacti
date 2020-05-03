@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Genus::class, function (Faker $faker) {
     return [
-        'genus' => $faker->unique()->randomElement([
+        'name' => $faker->unique()->randomElement([
             'aeonieum',
             'aloe',
             'agaves',

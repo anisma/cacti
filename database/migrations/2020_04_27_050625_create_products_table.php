@@ -20,9 +20,10 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->integer('quantity');
             $table->integer('discount')->nullable();
-            $table->unsignedBigInteger('color_id');
+            $table->integer('sold');
             $table->unsignedBigInteger('genus_id');
             $table->unsignedBigInteger('size_id');
+            $table->unsignedBigInteger('color_id');
             $table->timestamps();
 
         });

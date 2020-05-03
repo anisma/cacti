@@ -1,0 +1,28 @@
+.small-button {
+    background-size: cover;
+    height: 18px;
+    width: 18px;
+    border: 1px solid $font-color;
+    margin: 2px;
+    display: inline-block;
+    cursor: pointer;
+    transition: height width margin border 200ms ease-in-out;
+    &:hover {
+        height: 20px;
+        width: 20px;
+        margin: 0px;
+        border: 2px solid $primary-color;
+    }
+    &:active {
+        height: 18px;
+        width: 18px;
+        margin: 1px;
+    }
+
+    &.plus {
+        background-image: url(/logo/plus.png);
+    }
+    &.minus {
+        background-image: url(/logo/minus.png);
+    }
+}

@@ -15,7 +15,7 @@ class CreateGeneraTable extends Migration
     {
         Schema::create('genera', function (Blueprint $table) {
             $table->id();
-            $table->string('genus');
+            $table->string('name');
             $table->timestamps();
         });
     }

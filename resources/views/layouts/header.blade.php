@@ -1,52 +1,51 @@
-<header class="site-header">
+<header id="site-header">
     <div class="wrapper">
-        <div class="logo">
-            <a href="/">
-                <span class="icon-logo">CACTI</span>
-            </a>
-        </div>
-        <div class="header-middle-area">
-            <nav class="main-nav">
-                <ul class="main-section">
-                    <li class="home">
-                        <a href="{{ route('home') }}">
-                        <span>Home</span></a>
-                    </li>    
-                    <li class="shop">
-                        <a href="{{ route('shop') }}">
-                        <span>Shop</span>
+        <a href="/"><h1 class="logo-icon">CACTI</h1></a>
+        <div id="burger-menu"></div>
+        <nav > 
+            <ul class="header-middle-area">
+                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}"><span>Home</span></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('shop') }}"><span>Shop</span></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('blog') }}"><span>Blog</span></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('contacts') }}"><span>Contact</span></a></li>
+            </ul>
+            <ul class="header-right-area">
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <img src="/logo/shopping-cart.png" alt="">
+                        <span>Cart</span>
                     </a>
-                    </li>    
-                    <li class="blog">
-                        <a href="{{ route('blog') }}">
-                        <span>Blog</span>
-                    </a>
-                    </li>    
-                    <li class="contacts">
-                        <a href="{{ route('contacts') }}">
-                        <span>Contacts</span>
-                    </a>
-                    </li>    
-                </ul>
-            </nav>
-        </div>
-        <div class="header-right-area">
-            <nav class="main-nav">
-                <ul class="main-section">
-                    <li class="shopping-cart">
-                        <a href="#">
-                            <img src="logo/shopping-cart.png" alt="" class="menu-logo">
-                            <span>Cart</span>
-                        </a>
+                </li>
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link button-link" href="{{ route('login') }}">Login</a>
                     </li>
-                    <li class="my-account">
-                        <a href="#">
-                            <img src="logo/customer.png" alt="" class="menu-logo">
-                            <span>My Account</span>
+                    @if (Route::has('register'))
+                        <li class="nav-item"> 
+                            <a class="nav-link register" href="{{ route('register') }}">Register</a>
+                        </li>
+                    @endif
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <img src="/logo/customer.png" alt="">
+                            <span>{{ Auth::user()->name }}</span>
                         </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
                     </li>
-                </ul>
-            </nav>
-        </div>
+                @endguest
+            </ul>
+        </nav>
     </div>
 </header>

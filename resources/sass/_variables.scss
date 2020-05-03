@@ -1,18 +1,13 @@
 // Body
 $body-bg: #f8fafc;
+
 // Typography
-$font-primary: 'Playfair Display',
-serif;
-$font-secondary: 'Montserrat',
-sans-serif;
+$primary-font: "Playfair Display", serif;
+$secondary-font: "Montserrat", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
 // Colors
-$color-primary: #8ac346;
-$color-secondary: #425d00;
-$color-font: #12171b;
-//font size
-$font-size-main-title: 5em;
-$font-size-title: 3rem;
-$font-size-sub-title: 2rem;
-$font-size-article: 1.5rem;
+$primary-color: #8ac346;
+$secondary-color: #425d00;
+$font-color: #12171b;

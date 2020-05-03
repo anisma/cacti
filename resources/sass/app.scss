@@ -1,29 +1,24 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap");
+
 // Variables
-@import 'variables';
-// Bootstrap
+@import "variables";
+
+// Variables
+@import "config";
+
+// // Bootstrap
 // @import '~bootstrap/scss/bootstrap';
-//CSS reset
-@import 'reset';
-// card-list
-@import 'cardlist';
-// contact us form
-@import 'contact-us-form';
-//home
-@import 'home';
-// banner
-@import 'banner';
-//shop
-@import 'shop';
-@import 'product-preview';
-// blog
-@import 'blog';
-// contacts
-@import 'contacts';
-// header
-@import 'header';
-// footer
-@import 'footer';
-// not found
-@import 'notfound';
+
+// component
+
+@import "components";
+
+// Pages
+@import "pages";
+
+// Header
+@import "header";
+
+// Footer
+@import "footer";

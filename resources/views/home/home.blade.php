@@ -1,1 +1,4 @@
-<h1>hai</h1>
+@extends('layouts/app')
+@section('content')
+    
+@endsection

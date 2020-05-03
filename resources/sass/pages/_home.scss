@@ -1,0 +1,132 @@
+/*-------------- Styling for Hero ------------*/
+
+#hero {
+    overflow: hidden;
+    .banner-wrapper {
+        position: relative;
+        width: 300%;
+        margin: 0;
+        left: -200;
+        text-align: left;
+        animation: 15s slidy infinite;
+    }
+    .banner {
+        width: 33.3%;
+        float: left;
+        height: 100vh;
+    }
+}
+@keyframes slidy {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    33% {
+        left: -100%;
+    }
+    55% {
+        left: -100%;
+    }
+    68% {
+        left: -200%;
+    }
+    88% {
+        left: -200%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+/*-------------- Styling for Each Sections ------------*/
+
+section {
+    padding: 50px;
+}
+
+/*-------------- Styling for Featured Items ------------*/
+#featured {
+    padding-top: 100px;
+    .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        h3 {
+            display: inline-block;
+        }
+        .button-link {
+            text-transform: uppercase;
+        }
+    }
+}
+
+/*-------------- Styling for About Us ------------*/
+
+#about-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(500px auto);
+    padding: 50px 0;
+    h2 {
+        margin-bottom: 1em;
+    }
+    p {
+        width: 90%;
+        margin-bottom: 0.8em;
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        object-position: left;
+    }
+}
+
+/*-------------- Styling for Services ------------*/
+
+#point-of-sale {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    text-align: center;
+    li {
+        margin-bottom: 1em;
+    }
+    .logo {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+/*-------------- Styling for Article ------------*/
+
+#article {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 100px;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+    li {
+        margin-bottom: 1em;
+    }
+}
+
+/*-------------- Styling for Contact Us ------------*/
+
+#contact-us {
+    background-image: url(/img/contact.jpg);
+    background-position: 100% 50%;
+    background-size: cover;
+    .contact-us-content {
+        width: 40%;
+        text-align: center;
+        h2,
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+}
