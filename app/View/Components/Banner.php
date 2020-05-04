@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 
 class Banner extends Component
 {
+    public $id;
     public $image;
     public $title;
     public $index;
@@ -15,8 +16,9 @@ class Banner extends Component
      *
      * @return void
      */
-    public function __construct($image, $title, $index, $total)
+    public function __construct($id, $image, $title, $index, $total)
     {
+        $this->id = $id;
         $this->image = $image;
         $this->title = $title;
         $this->index = $index;

@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="banner" id="{{ $id }}">
     <img class="image" src="{{ $image }}" alt="" >
     <div class="wrapper">
         <div class="content-wrapper">
