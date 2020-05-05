@@ -18,14 +18,13 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('price');
-            $table->integer('quantity');
+            $table->integer('stock');
             $table->integer('discount')->nullable();
             $table->integer('sold');
             $table->unsignedBigInteger('genus_id');
             $table->unsignedBigInteger('size_id');
             $table->unsignedBigInteger('color_id');
             $table->timestamps();
-
         });
     }
 

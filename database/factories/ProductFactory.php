@@ -17,14 +17,14 @@ $factory->define(Product::class, function (Faker $faker) {
 
     return [
         'name' => $faker->unique()->name,
-        'description' =>$faker->paragraph(15,true),
+        'description' => $faker->paragraph(15, true),
         'price' => $faker->randomElement([
             '45000',
             '50000',
             '75000',
             '100000'
         ]),
-        'quantity' => $faker->randomDigit,
+        'stock' => $faker->randomDigit,
         'discount' => '0',
         'sold' => $faker->randomDigit,
         'genus_id' => $faker->randomElement($genus),
