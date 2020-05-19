@@ -6,7 +6,7 @@ use App\Size;
 use App\Color;
 use App\Genus;
 use App\Image;
-use App\CartDetail;
+use App\CartItem;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -31,8 +31,8 @@ class Product extends Model
         return $this->hasMany(Image::class);
     }
 
-    public function cartDetail()
+    public function carts()
     {
-        return $this->belongsTo(CartDetail::class);
+        return $this->belongsToMany(Cart::class)->withPivot('quantity')->withTimestamps();
     }
 }

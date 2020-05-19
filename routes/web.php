@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Database\Eloquent\Collection;
+use App\Http\Resources\CartResource;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\ProductResource;
+use Illuminate\Database\Eloquent\Collection;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/test', function () {
-    $items = App\Product::take(3)->get();
-    // $items->withPath(url('/'));
-    // dd($items);
-    return view('test', compact('items'));
+    $cart = new CartResource(App\Cart::find(1));
+    // return view('test', compact('cart'));
+    // dd($cart);
+    return $cart['products'];
 });
 
 Auth::routes();
