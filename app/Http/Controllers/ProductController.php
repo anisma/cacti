@@ -2,29 +2,77 @@
 
 namespace App\Http\Controllers;
 
-use App\Size;
-use App\Color;
-use App\Genus;
 use App\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\ProductResource;
+use App\Http\Resources\ProductCollection;
 
 class ProductController extends Controller
 {
-    public function index()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
     {
-        $genera = Genus::orderBy('name', 'asc')->get();
-        $colors = Color::orderBy('name', 'asc')->get();
-        $sizes = Size::orderBy('name', 'asc')->get();
+        $products = Product::genusFilter($request->all())
+            ->sizeFilter($request->all())
+            ->colorFilter($request->all())
+            ->take(3)
+            ->get()
+            ->keyBy(function ($product) {
+                return Str::slug($product['name'] . '-' . $product->color->name, '-');
+            });
 
-        $products = Product::orderBy('sold', 'desc')->paginate(9)->onEachSide(1);
 
-        return view('shop.index', compact('products', 'genera', 'colors', 'sizes'));
+        return new ProductCollection($products);
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  App\Product $product
+     * @return ProductResource
+     */
     public function show(Product $product)
     {
-        $sizes = Size::orderBy('name', 'asc')->get();
-        $relatedItems = Product::where('genus_id', $product->genus->id)->whereNotIn('id', [$product->id])->take(3)->get();
+        return (new ProductResource($product));
+    }
 
-        return view('shop.show', compact('product', 'sizes', 'relatedItems'));
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

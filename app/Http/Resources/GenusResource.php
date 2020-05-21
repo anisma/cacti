@@ -16,7 +16,7 @@ class GenusResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'genus' => $this->name
+            'name' => $this->name
         ];
     }
 }

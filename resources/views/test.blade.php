@@ -23,12 +23,8 @@
         @include('layouts/header')
         <main class="py-4">
 
-            <div style="margin: 100px">
-                @foreach ($cart['images'] as $product)
-                    {{ $product }}
-                @endforeach
-                {{-- <x-cart-item :product="$product"/> --}}
-            </div>
+           
+            <div id="shop"></div>
 
         </main>
         @include('layouts/footer')

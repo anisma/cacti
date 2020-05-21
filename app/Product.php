@@ -8,6 +8,7 @@ use App\Genus;
 use App\Image;
 use App\CartItem;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Product extends Model
 {
@@ -34,5 +35,36 @@ class Product extends Model
     public function carts()
     {
         return $this->belongsToMany(Cart::class)->withPivot('quantity')->withTimestamps();
+    }
+
+    public function scopeGenusFilter($query, $filter)
+    {
+        if (isset($filter['genus'])) {
+            $query->whereHas(
+                'genus',
+                fn (Builder $query) =>
+                $query->whereIn('name', $filter['genus'])
+            )->get();
+        }
+    }
+    public function scopeSizeFilter($query, $filter)
+    {
+        if (isset($filter['size'])) {
+            $query->whereHas(
+                'size',
+                fn (Builder $query) =>
+                $query->whereIn('name', $filter['size'])
+            )->get();
+        }
+    }
+    public function scopeColorFilter($query, $filter)
+    {
+        if (isset($filter['color'])) {
+            $query->whereHas(
+                'color',
+                fn (Builder $query) =>
+                $query->whereIn('name', $filter['color'])
+            )->get();
+        }
     }
 }

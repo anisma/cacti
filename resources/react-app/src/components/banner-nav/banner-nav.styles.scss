@@ -1,0 +1,94 @@
+@import '../../assets/styles/variable';
+
+#banner-nav {
+   display: block;
+   position: relative;
+   .arrow-right {
+      position: relative;
+      padding: 10px 10px;
+      cursor: pointer;
+      &::before {
+         content: '';
+         z-index: 1;
+         position: absolute;
+         background-color: $font-color;
+         top: 2px;
+         left: 50%;
+         width: 20px;
+         height: 1px;
+         transform-origin: 0 0;
+         transform: rotateZ(60deg);
+      }
+      &::after {
+         content: '';
+         z-index: 1;
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         background-color: $font-color;
+         width: 20px;
+         height: 1px;
+         transform-origin: 0 100%;
+         transform: rotateZ(-60deg);
+      }
+      &:hover {
+         background-color: $primary-color;
+      }
+   }
+   .arrow-left {
+      position: relative;
+      padding: 10px 10px;
+      cursor: pointer;
+      &::before {
+         content: '';
+         z-index: 1;
+         position: absolute;
+         background-color: $font-color;
+         top: 20px;
+         right: 0;
+         width: 20px;
+         height: 1px;
+         transform-origin: 0 0;
+         transform: rotateZ(-60deg);
+      }
+      &::after {
+         content: '';
+         z-index: 1;
+         position: absolute;
+         bottom: 18px;
+         right: 0;
+         background-color: $font-color;
+         width: 20px;
+         height: 1px;
+         transform-origin: 0 100%;
+         transform: rotateZ(60deg);
+      }
+      &:hover {
+         background-color: $primary-color;
+      }
+   }
+   .line {
+      position: relative;
+      padding: 10px 120px;
+      &::before {
+         content: '';
+         z-index: 1;
+         position: absolute;
+         left: 20px;
+         top: 50%;
+         background-color: $font-color;
+         width: 200px;
+         height: 1px;
+      }
+   }
+   .pagination {
+      position: relative;
+      font-size: 1.2em;
+      .index {
+         font-weight: bold;
+      }
+      .total {
+         color: $primary-color;
+      }
+   }
+}

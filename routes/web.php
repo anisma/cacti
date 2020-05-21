@@ -17,20 +17,17 @@ use Illuminate\Database\Eloquent\Collection;
 |
 */
 
-Route::get('/test', function () {
-    $cart = new CartResource(App\Cart::find(1));
-    // return view('test', compact('cart'));
-    // dd($cart);
-    return $cart['products'];
-});
+Route::get('/app{any?}', function () {
+    return view('app');
+})->where('any', '.*')->name('app');
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/shop', 'ProductController@index')->name('shop');
-Route::get('/shop/{product}', 'ProductController@show')->name('shop.show');
+// Route::get('/shop', 'ShopController@index')->name('shop');
+// Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
 
-Route::get('/blog', 'BlogController@index')->name('blog');
+// Route::get('/blog', 'BlogController@index')->name('blog');
 
-Route::get('/contacts', 'ContactController@index')->name('contacts');
+// Route::get('/contacts', 'ContactController@index')->name('contacts');

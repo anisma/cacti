@@ -1,4 +1,7 @@
 @extends('layouts/app')
+@push('scripts')
+    <script src="{{ asset('js/shop/shop.js') }}"></script>
+@endpush
 @section('content')
     <div class="wrapper shop-page">
         <div class="filter">
@@ -10,9 +13,9 @@
 
         <div class="shop-wrapper">
             <h3 class="shop-title">Plants</h3>
-            <div class="shortby">
-                <div class="main-shortby">
-                    <select id="short">
+            <div class="sortby">
+                <div class="main-sortby">
+                    <select id="sort">
                         <option value="featured">Featured</option>
                         <option value="newest">Newest</option>
                         <option value="oldest">Oldest</option>
@@ -23,9 +26,7 @@
             </div>
             <x-card-list :products="$products"/>
             
-           
-
-                {{ $products->links('pagination') }}
+            {{ $products->links('pagination') }}
 
         </div>
 

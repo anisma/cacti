@@ -1,0 +1,25 @@
+@import '../../assets/styles/variable';
+
+.shop-page {
+   display: grid;
+   grid-template-columns: 1fr 4fr;
+   column-gap: 30px;
+   padding: 100px 0;
+
+   h4 {
+      margin-bottom: 10px;
+      font-family: $secondary-font;
+      padding-left: 0.8em;
+   }
+}
+
+.shop-wrapper {
+   .shop-title {
+      margin-bottom: 1rem;
+   }
+   .shortby {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+   }
+}

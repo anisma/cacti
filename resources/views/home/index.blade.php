@@ -1,4 +1,7 @@
 @extends('layouts/app')
+@push('scripts')
+    <script src="{{ asset('js/banner.js') }}"></script>
+@endpush
 @section('content')
     <div id="hero">
         <div class="banner-wrapper">
