@@ -999,7 +999,7 @@ section {
 @media screen and (max-width: 540px) {
   #point-of-sale {
     grid-template-columns: 1fr;
-    row-gap: 20px;
+    row-gap: 50px;
   }
 }
 
