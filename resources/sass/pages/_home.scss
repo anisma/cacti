@@ -38,6 +38,12 @@
       height: 600px;
    }
 }
+
+@media screen and (max-width: 768px) {
+   #hero {
+      height: 550px;
+   }
+}
 @media screen and (max-width: 540px) {
    #hero {
       height: 450px;
@@ -50,6 +56,11 @@ section {
    padding: 50px;
 }
 
+@media screen and (max-width: 768px) {
+   section {
+      padding: 5px;
+   }
+}
 @media screen and (max-width: 540px) {
    section {
       padding: 5px;
@@ -114,6 +125,8 @@ section {
          justify-self: center;
          h2 {
             text-align: center;
+            margin-top: 1em;
+            margin-bottom: 0.6em;
          }
          p {
             text-align: center;
@@ -178,10 +191,19 @@ section {
    }
 }
 
+@media screen and (max-width: 768px) {
+   #article {
+      margin: 50px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+   }
+}
 @media screen and (max-width: 540px) {
    #article {
       padding-top: 30px;
       grid-template-columns: 1fr;
+      row-gap: 30px;
    }
 }
 

@@ -31,6 +31,14 @@
 
 @media screen and (max-width: 1024px) {
    #login {
+      padding: 100px 0;
+      .login-container {
+         width: 80%;
+      }
+   }
+}
+@media screen and (max-width: 768px) {
+   #login {
       .login-container {
          width: 80%;
       }
@@ -39,7 +47,7 @@
 
 @media screen and (max-width: 540px) {
    #login {
-      padding: 50px 0;
+      padding: 100px 0;
 
       .login-container {
          width: 90%;

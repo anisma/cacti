@@ -83,14 +83,14 @@ h5 {
 
 @media screen and (max-width: 1024px) {
   .wrapper {
-    max-width: 900px;
+    max-width: 75%;
     margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 768px) {
   .wrapper {
-    max-width: 700px;
+    max-width: 90%;
   }
 }
 
@@ -270,12 +270,6 @@ h5 {
   -moz-column-gap: 30px;
        column-gap: 30px;
   row-gap: 50px;
-}
-
-@media screen and (max-width: 768px) {
-  .card-list {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media screen and (max-width: 540px) {
@@ -637,6 +631,20 @@ h5 {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .banner {
+    min-height: 550px;
+  }
+
+  .banner .content-wrapper {
+    width: 70%;
+  }
+
+  .banner .image {
+    height: 550px;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .banner {
     min-height: 450px;
@@ -693,6 +701,16 @@ h5 {
 }
 
 @media screen and (max-width: 1024px) {
+  #login {
+    padding: 100px 0;
+  }
+
+  #login .login-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
   #login .login-container {
     width: 80%;
   }
@@ -700,7 +718,7 @@ h5 {
 
 @media screen and (max-width: 540px) {
   #login {
-    padding: 50px 0;
+    padding: 100px 0;
   }
 
   #login .login-container {
@@ -735,6 +753,10 @@ h5 {
 }
 
 @media screen and (max-width: 1024px) {
+  #register {
+    padding: 100px 0;
+  }
+
   #register .register-container {
     width: 80%;
   }
@@ -742,7 +764,7 @@ h5 {
 
 @media screen and (max-width: 540px) {
   #register {
-    padding: 50px 0;
+    padding: 100px 0;
   }
 
   #register .register-container {
@@ -829,6 +851,12 @@ h5 {
   }
 }
 
+@media screen and (max-width: 768px) {
+  #hero {
+    height: 550px;
+  }
+}
+
 @media screen and (max-width: 540px) {
   #hero {
     height: 450px;
@@ -839,6 +867,12 @@ h5 {
 
 section {
   padding: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    padding: 5px;
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -917,6 +951,8 @@ section {
 
   #about-us .desc h2 {
     text-align: center;
+    margin-top: 1em;
+    margin-bottom: 0.6em;
   }
 
   #about-us .desc p {
@@ -986,10 +1022,21 @@ section {
   margin-bottom: 1em;
 }
 
+@media screen and (max-width: 768px) {
+  #article {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+}
+
 @media screen and (max-width: 540px) {
   #article {
     padding-top: 30px;
     grid-template-columns: 1fr;
+    row-gap: 30px;
   }
 }
 
@@ -1057,7 +1104,7 @@ section {
 
 @media screen and (max-width: 540px) {
   .shop-page {
-    padding: 30px 0;
+    padding: 80px 0;
     grid-template-columns: 1fr;
     position: relative;
   }
@@ -1358,10 +1405,12 @@ section {
 @media screen and (max-width: 768px) {
   .contact-us-page .contact-us {
     grid-template-columns: 1fr;
-    padding: 30px 0;
+    padding: 100px 0;
+    justify-content: center;
   }
 
   .contact-us-page .contact-us .contact-us-content {
+    padding-left: 30px;
     border-right: none;
   }
 
@@ -1464,20 +1513,19 @@ section {
 
 @media screen and (max-width: 1024px) {
   #site-header .wrapper {
-    max-width: 940px;
+    max-width: 76%;
   }
 }
 
 @media screen and (max-width: 768px) {
   #site-header .wrapper {
-    max-width: 740px;
+    max-width: 91%;
   }
 }
 
 @media screen and (max-width: 540px) {
   #site-header {
     display: flex;
-    position: relative;
     height: 50px;
   }
 
@@ -1498,6 +1546,11 @@ section {
     background-color: #425d00;
     position: relative;
     z-index: 1;
+    right: 0;
+  }
+
+  #site-header .wrapper #burger-menu.open {
+    position: fixed;
   }
 
   #site-header .wrapper #burger-menu::after {
@@ -1523,11 +1576,12 @@ section {
     height: 100vh;
     width: 100%;
     background-color: #fff;
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: start;
     top: 0;
+    left: 0;
     visibility: hidden;
   }
 

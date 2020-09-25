@@ -81,7 +81,7 @@
 @media screen and (max-width: 1024px) {
    #site-header {
       .wrapper {
-         max-width: 900px+40px;
+         max-width: 76%;
       }
    }
 }
@@ -89,7 +89,7 @@
 @media screen and (max-width: 768px) {
    #site-header {
       .wrapper {
-         max-width: 700px+40px;
+         max-width: 91%;
       }
    }
 }
@@ -97,7 +97,6 @@
 @media screen and (max-width: 540px) {
    #site-header {
       display: flex;
-      position: relative;
       height: 50px;
 
       .wrapper {
@@ -116,6 +115,10 @@
             background-color: $secondary-color;
             position: relative;
             z-index: 1;
+            right: 0;
+            &.open {
+               position: fixed;
+            }
 
             &::after {
                content: '';
@@ -140,11 +143,12 @@
             height: 100vh;
             width: 100%;
             background-color: #fff;
-            position: absolute;
+            position: fixed;
             display: flex;
             flex-direction: column;
             justify-content: start;
             top: 0;
+            left: 0;
             visibility: hidden;
             &.open {
                visibility: visible;
