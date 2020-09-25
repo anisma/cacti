@@ -1,23 +1,83 @@
 .shop-page {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    column-gap: 30px;
-    padding: 100px 0;
+   display: grid;
+   grid-template-columns: 1fr 4fr;
+   column-gap: 30px;
+   padding: 100px 0;
+   .filter-btn {
+      display: none;
+   }
+   .filter-option-btn {
+      display: none;
+   }
 
-    h4 {
-        margin-bottom: 10px;
-        font-family: $secondary-font;
-        padding-left: 0.8em;
-    }
+   h4 {
+      margin-bottom: 10px;
+      font-family: $secondary-font;
+      padding-left: 0.8em;
+   }
 }
 
 .shop-wrapper {
-    .shop-title {
-        margin-bottom: 1rem;
-    }
-    .shortby {
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 1rem;
-    }
+   .shop-title {
+      margin-bottom: 1rem;
+   }
+   .shortby {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+   }
+}
+
+@media screen and (max-width: 540px) {
+   .shop-page {
+      padding: 30px 0;
+      grid-template-columns: 1fr;
+      position: relative;
+
+      .filter-btn {
+         display: flex;
+         justify-content: center;
+         padding-top: 10px;
+         visibility: visible;
+         position: fixed;
+         display: flex;
+         bottom: 0;
+         background-color: #fff;
+         width: 100vw;
+         height: 50px;
+         left: 0;
+         font-size: 1.3em;
+         font-weight: 700;
+         z-index: 3;
+
+         &.open {
+            display: hidden;
+         }
+      }
+
+      .filter {
+         display: none;
+         &.open {
+            padding: 50px 30px 0;
+            height: 100%;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            position: fixed;
+            background-color: #fff;
+            z-index: 3;
+            display: block;
+            overflow: scroll;
+
+            .filter-option-btn {
+               display: flex;
+               justify-content: space-around;
+               padding-bottom: 30px;
+               .button {
+                  min-width: 100px;
+               }
+            }
+         }
+      }
+   }
 }

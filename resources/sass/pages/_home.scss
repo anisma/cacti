@@ -2,7 +2,6 @@
 
 #hero {
    overflow: hidden;
-
    margin: 0 auto;
    height: 100vh;
    .banner-wrapper {
@@ -34,10 +33,27 @@
    }
 }
 
+@media screen and (max-width: 1024px) {
+   #hero {
+      height: 600px;
+   }
+}
+@media screen and (max-width: 540px) {
+   #hero {
+      height: 450px;
+   }
+}
+
 /*-------------- Styling for Each Sections ------------*/
 
 section {
    padding: 50px;
+}
+
+@media screen and (max-width: 540px) {
+   section {
+      padding: 5px;
+   }
 }
 
 /*-------------- Styling for Featured Items ------------*/
@@ -47,6 +63,7 @@ section {
       display: flex;
       justify-content: space-between;
       margin-bottom: 30px;
+      align-items: center;
       h3 {
          display: inline-block;
       }
@@ -56,25 +73,70 @@ section {
    }
 }
 
+@media screen and (max-width: 540px) {
+   #featured {
+      padding-top: 50px;
+   }
+}
+
 /*-------------- Styling for About Us ------------*/
 
 #about-us {
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-areas: 'desc img';
    grid-auto-rows: minmax(500px auto);
    padding: 50px 0;
-   h2 {
-      margin-bottom: 1em;
-   }
-   p {
-      width: 90%;
-      margin-bottom: 0.8em;
+   .desc {
+      grid-area: desc;
+      h2 {
+         margin-bottom: 1em;
+      }
+      p {
+         width: 90%;
+         margin-bottom: 0.8em;
+      }
    }
 
    img {
+      grid-area: img;
       width: 100%;
       object-fit: cover;
       object-position: left;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   #about-us {
+      grid-template-areas: 'img' 'desc';
+
+      .desc {
+         grid-area: desc;
+         justify-self: center;
+         h2 {
+            text-align: center;
+         }
+         p {
+            text-align: center;
+            width: 100%;
+         }
+      }
+
+      img {
+         justify-self: center;
+         width: 50%;
+         text-align: center;
+      }
+   }
+}
+
+@media screen and (max-width: 540px) {
+   #about-us {
+      .desc {
+         justify-self: center;
+      }
+      img {
+         width: 80%;
+      }
    }
 }
 
@@ -94,6 +156,13 @@ section {
    }
 }
 
+@media screen and (max-width: 540px) {
+   #point-of-sale {
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+   }
+}
+
 /*-------------- Styling for Article ------------*/
 
 #article {
@@ -109,6 +178,13 @@ section {
    }
 }
 
+@media screen and (max-width: 540px) {
+   #article {
+      padding-top: 30px;
+      grid-template-columns: 1fr;
+   }
+}
+
 /*-------------- Styling for Contact Us ------------*/
 
 #contact-us {
@@ -121,6 +197,17 @@ section {
       h2,
       p {
          margin-bottom: 1rem;
+      }
+   }
+}
+
+@media screen and (max-width: 540px) {
+   #contact-us {
+      width: 100vw;
+      background-position: 50% 50%;
+      .contact-us-content {
+         width: 90%;
+         padding-bottom: 20px;
       }
    }
 }

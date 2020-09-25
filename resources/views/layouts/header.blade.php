@@ -1,12 +1,12 @@
 <header id="site-header">
     <div class="wrapper">
-        <a href="/"><h1 class="logo-icon">CACTI</h1></a>
+        <a class="brand" href="/"><h1 class="logo-icon">CACTI</h1></a>
         <div id="burger-menu"></div>
-        <nav > 
+        <nav class="menu"> 
             <ul class="header-middle-area">
-                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}"><span>Home</span></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('shop') }}"><span>Shop</span></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('blog') }}"><span>Blog</span></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}"><span>Home</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('shop') }}"><span>Shop</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('blog') }}"><span>Blog</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('contacts') }}"><span>Contact</span></a></li>
             </ul>
             <ul class="header-right-area">

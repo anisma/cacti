@@ -14,6 +14,7 @@
 
 // require('./components/Example');
 
-require("./component/card");
-require("./header");
-require("./banner");
+require('./component/card');
+require('./header');
+// require('./banner');
+require('./burger-menu');

@@ -1,4 +1,7 @@
 /* reset */
+* {
+   box-sizing: border-box;
+}
 body,
 p,
 a,
@@ -63,4 +66,23 @@ h5 {
 .wrapper {
    max-width: 1000px;
    margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+   .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .wrapper {
+      max-width: 700px;
+   }
+}
+
+@media screen and (max-width: 540px) {
+   .wrapper {
+      width: 90%;
+   }
 }

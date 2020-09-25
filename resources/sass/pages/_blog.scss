@@ -1,35 +1,68 @@
 /*-------------- Styling for Blog Page------------*/
 
 .blog {
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url("/img/blog1.jpg");
-    background-size: 100vw;
-    background-position: 25% 55%;
-    h1 {
-        padding: 0 0 60px;
-        margin: 0;
-    }
+   height: 70vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-image: url('/img/blog1.jpg');
+   background-size: 100vw;
+   background-position: 25% 55%;
+   h1 {
+      padding: 0 0 60px;
+      margin: 0;
+   }
 }
 
 .blog-article-index {
-    padding: 100px 0 50px;
-    .article-card-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 30px;
-        row-gap: 50px;
-        .image,
-        h4,
-        p {
-            margin-bottom: 1em;
-            height: 1;
-        }
+   padding: 100px 0 50px;
+   .article-card-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 30px;
+      row-gap: 50px;
 
-        img {
-            width: 100%;
-        }
-    }
+      @media screen and (max-width: 768px) {
+         grid-template-columns: 1fr 1fr;
+      }
+
+      .image,
+      h4,
+      p {
+         margin-bottom: 1em;
+         height: 1;
+      }
+
+      img {
+         width: 100%;
+      }
+   }
+}
+@media screen and (max-width: 1024px) {
+   .blog {
+      height: 600px;
+      background-size: cover;
+   }
+}
+@media screen and (max-width: 768px) {
+   .blog {
+      height: 400px;
+      background-size: cover;
+   }
+}
+
+@media screen and (max-width: 540px) {
+   .blog {
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+   }
+
+   .blog-article-index {
+      .article-card-list {
+         grid-template-columns: 1fr;
+         column-gap: 30px;
+         row-gap: 50px;
+      }
+   }
 }

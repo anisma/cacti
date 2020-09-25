@@ -108,97 +108,37 @@
 // require('./components/Example');
 __webpack_require__(/*! ./component/card */ "./resources/js/component/card.js");
 
-__webpack_require__(/*! ./header */ "./resources/js/header.js");
+__webpack_require__(/*! ./header */ "./resources/js/header.js"); // require('./banner');
 
-__webpack_require__(/*! ./banner */ "./resources/js/banner.js");
+
+__webpack_require__(/*! ./burger-menu */ "./resources/js/burger-menu.js");
 
 /***/ }),
 
-/***/ "./resources/js/banner.js":
-/*!********************************!*\
-  !*** ./resources/js/banner.js ***!
-  \********************************/
+/***/ "./resources/js/burger-menu.js":
+/*!*************************************!*\
+  !*** ./resources/js/burger-menu.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// Banner slider
-var bannerWrapper = document.querySelector(".banner-wrapper");
-var banner = document.querySelectorAll(".banner"); //button
+var burger = document.querySelector('#burger-menu');
+var menu = document.querySelector('.menu');
+var navItems = document.querySelectorAll('.nav-link');
+var showMenu = false;
+burger.addEventListener('click', toggleMenu); // navItems.forEach((item) => item.addEventListener('click', toggleMenu));
 
-var prevBtn = document.querySelectorAll(".arrow-left");
-var nextBtn = document.querySelectorAll(".arrow-right");
-var counter = 1; // Initial Position
-
-bannerWrapper.style.transform = "translateX(-".concat(100 * counter, "vw)");
-
-function slideHandle() {
-  bannerWrapper.style.transition = "transform 400ms ease-in-out";
-  bannerWrapper.style.transform = "translateX(-".concat(100 * counter, "vw)");
-}
-
-function slideShow() {
-  counter++;
-  slideHandle();
-
-  if (banner[counter].id == "last-banner") {
-    setTimeout(function () {
-      counter = banner.length - 2;
-      bannerWrapper.style.transition = "none";
-      bannerWrapper.style.transform = "translateX(-".concat(100 * counter, "vw)");
-    }, 400);
+function toggleMenu() {
+  if (!showMenu) {
+    burger.classList.add('open');
+    menu.classList.add('open');
+    showMenu = true;
+  } else {
+    burger.classList.remove('open');
+    menu.classList.remove('open');
+    showMenu = false;
   }
-
-  if (banner[counter].id == "first-banner") {
-    setTimeout(function () {
-      counter = banner.length - counter;
-      bannerWrapper.style.transition = "none";
-      bannerWrapper.style.transform = "translateX(-".concat(100 * counter, "vw)");
-    }, 400);
-  }
-
-  setTimeout(slideHandle, 5000);
-  setTimeout(slideShow, 5000);
 }
-/*------------AFTER WINDOW LOAD---------- */
-
-
-window.addEventListener("load", function () {
-  // Automatic SlideShow
-  slideShow();
-  /*-------------add event handler to each button -------------*/
-  // slide to the right
-
-  Array.from(nextBtn).forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      if (counter >= banner.length - 1) return;
-      counter++;
-      slideHandle();
-    });
-  }); // slide to the left
-
-  Array.from(prevBtn).forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      if (counter <= 0) return;
-      counter--;
-      slideHandle();
-    });
-  });
-  /*-------------make infinity loop for banner -------------*/
-
-  bannerWrapper.addEventListener("transitionend", function () {
-    if (banner[counter].id == "last-banner") {
-      counter = banner.length - 2;
-      bannerWrapper.style.transition = "none";
-      bannerWrapper.style.transform = "translateX(-".concat(100 * counter, "vw)");
-    }
-
-    if (banner[counter].id == "first-banner") {
-      counter = banner.length - counter;
-      bannerWrapper.style.transition = "none";
-      bannerWrapper.style.transform = "translateX(-".concat(100 * counter, "vw)");
-    }
-  });
-});
 
 /***/ }),
 

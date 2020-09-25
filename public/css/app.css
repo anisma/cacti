@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;
 
-600&family=Playfair+Display:wght@700&display=swap);body,
+600&family=Playfair+Display:wght@700&display=swap);* {
+  box-sizing: border-box;
+}
+
+body,
 p,
 a,
 ul,
@@ -75,6 +79,25 @@ h5 {
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .wrapper {
+    width: 90%;
+  }
 }
 
 .button {
@@ -247,6 +270,21 @@ h5 {
   -moz-column-gap: 30px;
        column-gap: 30px;
   row-gap: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .card-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .card-list {
+    grid-template-columns: 1fr;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    row-gap: 20px;
+  }
 }
 
 .filter-group {
@@ -589,6 +627,35 @@ h5 {
      object-position: 100% 100%;
 }
 
+@media screen and (max-width: 1024px) {
+  .banner {
+    min-height: 600px;
+  }
+
+  .banner .image {
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .banner {
+    min-height: 450px;
+  }
+
+  .banner .content-wrapper {
+    width: 100%;
+    padding-top: 50px;
+  }
+
+  .banner .content-wrapper h1 {
+    font-size: 3em;
+  }
+
+  .banner .image {
+    height: 450px;
+  }
+}
+
 #login {
   height: 100vh;
   padding: 100px;
@@ -625,6 +692,12 @@ h5 {
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  #login .login-container {
+    width: 80%;
+  }
+}
+
 #register {
   height: 100vh;
   padding: 100px;
@@ -649,6 +722,12 @@ h5 {
 #register button {
   display: block;
   margin: 50px auto 10px;
+}
+
+@media screen and (max-width: 768px) {
+  #register .register-container {
+    width: 80%;
+  }
 }
 
 /*-------------- Styling for Hero ------------*/
@@ -724,10 +803,28 @@ h5 {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  #hero {
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #hero {
+    height: 450px;
+  }
+}
+
 /*-------------- Styling for Each Sections ------------*/
 
 section {
   padding: 50px;
+}
+
+@media screen and (max-width: 540px) {
+  section {
+    padding: 5px;
+  }
 }
 
 /*-------------- Styling for Featured Items ------------*/
@@ -740,6 +837,7 @@ section {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  align-items: center;
 }
 
 #featured .header h3 {
@@ -750,30 +848,77 @@ section {
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 540px) {
+  #featured {
+    padding-top: 50px;
+  }
+}
+
 /*-------------- Styling for About Us ------------*/
 
 #about-us {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "desc img";
   grid-auto-rows: minmax(500px auto);
   padding: 50px 0;
 }
 
-#about-us h2 {
+#about-us .desc {
+  grid-area: desc;
+}
+
+#about-us .desc h2 {
   margin-bottom: 1em;
 }
 
-#about-us p {
+#about-us .desc p {
   width: 90%;
   margin-bottom: 0.8em;
 }
 
 #about-us img {
+  grid-area: img;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: left;
      object-position: left;
+}
+
+@media screen and (max-width: 768px) {
+  #about-us {
+    grid-template-areas: "img" "desc";
+  }
+
+  #about-us .desc {
+    grid-area: desc;
+    justify-self: center;
+  }
+
+  #about-us .desc h2 {
+    text-align: center;
+  }
+
+  #about-us .desc p {
+    text-align: center;
+    width: 100%;
+  }
+
+  #about-us img {
+    justify-self: center;
+    width: 50%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #about-us .desc {
+    justify-self: center;
+  }
+
+  #about-us img {
+    width: 80%;
+  }
 }
 
 /*-------------- Styling for Services ------------*/
@@ -795,6 +940,13 @@ section {
   width: 100px;
 }
 
+@media screen and (max-width: 540px) {
+  #point-of-sale {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}
+
 /*-------------- Styling for Article ------------*/
 
 #article {
@@ -812,6 +964,13 @@ section {
 
 #article li {
   margin-bottom: 1em;
+}
+
+@media screen and (max-width: 540px) {
+  #article {
+    padding-top: 30px;
+    grid-template-columns: 1fr;
+  }
 }
 
 /*-------------- Styling for Contact Us ------------*/
@@ -832,12 +991,32 @@ section {
   margin-bottom: 1rem;
 }
 
+@media screen and (max-width: 540px) {
+  #contact-us {
+    width: 100vw;
+    background-position: 50% 50%;
+  }
+
+  #contact-us .contact-us-content {
+    width: 90%;
+    padding-bottom: 20px;
+  }
+}
+
 .shop-page {
   display: grid;
   grid-template-columns: 1fr 4fr;
   -moz-column-gap: 30px;
        column-gap: 30px;
   padding: 100px 0;
+}
+
+.shop-page .filter-btn {
+  display: none;
+}
+
+.shop-page .filter-option-btn {
+  display: none;
 }
 
 .shop-page h4 {
@@ -854,6 +1033,62 @@ section {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 540px) {
+  .shop-page {
+    padding: 30px 0;
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  .shop-page .filter-btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    visibility: visible;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    background-color: #fff;
+    width: 100vw;
+    height: 50px;
+    left: 0;
+    font-size: 1.3em;
+    font-weight: 700;
+    z-index: 3;
+  }
+
+  .shop-page .filter-btn.open {
+    display: hidden;
+  }
+
+  .shop-page .filter {
+    display: none;
+  }
+
+  .shop-page .filter.open {
+    padding: 50px 30px 0;
+    height: 100%;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #fff;
+    z-index: 3;
+    display: block;
+    overflow: scroll;
+  }
+
+  .shop-page .filter.open .filter-option-btn {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+  }
+
+  .shop-page .filter.open .filter-option-btn .button {
+    min-width: 100px;
+  }
 }
 
 /*-------------- Styling for Product Preview Page------------*/
@@ -877,6 +1112,13 @@ section {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   -moz-column-gap: 30px;
        column-gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .product-preview .images .image-index {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+  }
 }
 
 .product-preview .preview-content {
@@ -962,6 +1204,17 @@ section {
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 540px) {
+  .product-preview {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+
+  .product-preview .images .image-index {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
 /*-------------- Styling for Blog Page------------*/
 
 .blog {
@@ -991,6 +1244,12 @@ section {
   row-gap: 50px;
 }
 
+@media screen and (max-width: 768px) {
+  .blog-article-index .article-card-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .blog-article-index .article-card-list .image,
 .blog-article-index .article-card-list h4,
 .blog-article-index .article-card-list p {
@@ -1000,6 +1259,35 @@ section {
 
 .blog-article-index .article-card-list img {
   width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .blog {
+    height: 600px;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog {
+    height: 400px;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .blog {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .blog-article-index .article-card-list {
+    grid-template-columns: 1fr;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+    row-gap: 50px;
+  }
 }
 
 .contact-us-page {
@@ -1037,6 +1325,29 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .contact-us-page {
+    background-size: 100vw;
+    background-position: 0 50%;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-us-page .contact-us {
+    grid-template-columns: 1fr;
+    padding: 30px 0;
+  }
+
+  .contact-us-page .contact-us .contact-us-content {
+    border-right: none;
+  }
+
+  .contact-us-page .contact-us-form {
+    padding-right: 30px;
+  }
 }
 
 /*-------------- Styling for Header------------*/
@@ -1131,6 +1442,118 @@ section {
   padding: 15px 0 5px;
 }
 
+@media screen and (max-width: 1024px) {
+  #site-header .wrapper {
+    max-width: 940px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #site-header .wrapper {
+    max-width: 740px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #site-header {
+    display: flex;
+    position: relative;
+    height: 50px;
+  }
+
+  #site-header .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #site-header .wrapper .brand {
+    margin-left: 20px;
+  }
+
+  #site-header .wrapper #burger-menu {
+    margin-right: 20px;
+    width: 15px;
+    height: 3px;
+    background-color: #425d00;
+    position: relative;
+    z-index: 1;
+  }
+
+  #site-header .wrapper #burger-menu::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    top: 6px;
+    background-color: #425d00;
+  }
+
+  #site-header .wrapper #burger-menu::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    top: -6px;
+    background-color: #425d00;
+  }
+
+  #site-header .wrapper .menu {
+    padding-top: 50px;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    top: 0;
+    visibility: hidden;
+  }
+
+  #site-header .wrapper .menu.open {
+    visibility: visible;
+  }
+
+  #site-header .wrapper .menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #site-header .wrapper .menu ul .nav-item {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #site-header .wrapper .menu ul .nav-item .nav-link {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  #site-header .wrapper .menu ul .nav-item:hover {
+    background-color: #8ac346;
+  }
+
+  #site-header .wrapper .menu .nav-link.register {
+    background-color: transparent;
+    border: none;
+    color: #425d00;
+    font-weight: bold;
+  }
+
+  #site-header .wrapper .menu .nav-link.register:hover {
+    border: none;
+  }
+
+  #site-header .wrapper .menu .nav-link:hover {
+    color: #425d00;
+  }
+}
+
 /*-------------- Styling for Footer------------*/
 
 #footer {
@@ -1140,7 +1563,7 @@ section {
   background-position: center;
   text-align: center;
   width: 100%;
-  height: 30vh;
+  height: 200px;
   padding-top: 50px;
 }
 
